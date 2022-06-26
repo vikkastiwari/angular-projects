@@ -1,0 +1,12 @@
+$bg-color: #303030;
+
+.todo-wrapper{
+    .todo-left-panel-wrap{
+        background: $bg-color;
+        height: 93vh;
+
+        .todo-input-width{
+            width: 100%;
+        }
+    }
+}
