@@ -1,0 +1,7 @@
+<div class="wrapper">
+  <input type="text" [(ngModel)]="title">
+  <div class="wrapper">
+    <button (click)="onReset()" [disabled]="!title">reset</button>
+  </div>
+</div>
+<p>{{title}}</p>

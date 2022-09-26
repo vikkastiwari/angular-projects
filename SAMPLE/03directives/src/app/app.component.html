@@ -1,0 +1,16 @@
+<button (click)="onDisplayDetails()">Display Details</button>
+<div *ngIf="display; else noDisplay">
+  <p>Secret Code Displayed = {{ key }}</p>
+</div>
+<ng-template #noDisplay>
+  <p>No Code Present</p>
+</ng-template>
+<div *ngIf="logs.length > 0">
+  <h3>Logs</h3>
+  <div *ngFor="let item of logs; let i = index;">
+    <h4 *ngIf="logs.length < 5; else afterFive">{{i}} - {{item}}</h4>
+    <ng-template #afterFive>
+      <h4 [ngStyle]="{background: i>=5 ? setBlue() : ''}">{{i}} - {{item}}</h4>
+    </ng-template>
+  </div>
+</div>
