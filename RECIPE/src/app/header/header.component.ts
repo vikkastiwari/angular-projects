@@ -11,6 +11,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   private userSub!: Subscription;
   isAuthenticated:boolean = false;
+  collapsed = true;
 
   constructor(private dataStorageService: DataStorageService, private authService:AuthService) {}
 
