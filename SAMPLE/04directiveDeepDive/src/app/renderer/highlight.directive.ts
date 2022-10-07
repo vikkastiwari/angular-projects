@@ -18,13 +18,13 @@ export class HighlightDirective {
   }
 
   @HostListener('mouseenter') mouseover(eventData:Event){
-    console.log(eventData);
+    // console.log(eventData);
     // this.renderer2.setStyle(this.elmRef.nativeElement,'background-color','blue');
     this.backgroundColor = 'blue';
   }
 
   @HostListener('mouseleave') mouseleave(eventData:Event){
-    console.log(eventData);
+    // console.log(eventData);
     // this.renderer2.setStyle(this.elmRef.nativeElement,'background-color','green');
     this.backgroundColor = 'transparent';
   }
