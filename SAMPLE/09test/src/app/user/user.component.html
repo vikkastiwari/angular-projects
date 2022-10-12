@@ -1,0 +1,8 @@
+<div *ngIf="loggedIn; else pleaselogin">
+    {{userName | json}}
+</div>
+<ng-template #pleaselogin>
+    <div>
+        <h1>Please Login First</h1>
+    </div>
+</ng-template>
