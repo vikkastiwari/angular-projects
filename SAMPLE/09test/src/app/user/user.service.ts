@@ -8,7 +8,7 @@ export class UserService {
   constructor() { }
 
   name:object = {
-    "firstname":"hello",
-    "lastname":"kake"
+    firstname:'hello',
+    lastname:'kake'
   }
 }

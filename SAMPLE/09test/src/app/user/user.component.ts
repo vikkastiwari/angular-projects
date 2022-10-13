@@ -9,7 +9,7 @@ import { UserService } from './user.service';
 export class UserComponent implements OnInit {
 
   userName!:object;
-  loggedIn:boolean = false;
+  loggedIn:boolean = true;
 
   constructor(private userService: UserService) { }
 
