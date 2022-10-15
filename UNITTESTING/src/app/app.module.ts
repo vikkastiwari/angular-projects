@@ -7,6 +7,8 @@ import { StrengthPipe } from './pipe/strength/strength.pipe';
 import { DemoComponent } from './component/demo/demo.component';
 import { ModifierComponent } from './component/modifier/modifier.component';
 import { PostsComponent } from './component/posts/posts.component';
+import { PostComponent } from './component/posts/post/post.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,13 @@ import { PostsComponent } from './component/posts/posts.component';
     StrengthPipe,
     DemoComponent,
     ModifierComponent,
-    PostsComponent
+    PostsComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

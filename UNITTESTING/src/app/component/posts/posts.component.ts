@@ -16,6 +16,9 @@ export class PostsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getPosts();
+  }
+  
+  ngOnChanges(){
     console.log(this.posts,"posts from component");
   }
 
