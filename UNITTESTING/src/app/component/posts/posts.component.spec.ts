@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { Component, Input } from '@angular/core';
 import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
@@ -6,6 +7,7 @@ import { of } from 'rxjs';
 import { Post } from 'src/app/models/Posts';
 import { PostsService } from 'src/app/services/posts/posts.service';
 import { PostsComponent } from './posts.component';
+import { PostComponent } from './post/post.component';
 
 // class MockPostService {
 //   getPosts() {}
@@ -15,13 +17,13 @@ import { PostsComponent } from './posts.component';
 //   }
 // }
 
-@Component({
-  selector: 'app-post',
-  template: '<div></div>',
-})
-class FakePostComponent {
-  @Input() post!: Post;
-}
+// @Component({
+//   selector: 'app-post',
+//   template: '<div></div>',
+// })
+// class FakePostComponent {
+//   @Input() post!: Post;
+// }
 
 describe('PostsComponent', () => {
   let component: PostsComponent;
@@ -59,7 +61,8 @@ describe('PostsComponent', () => {
     // we can use testbed to inject the dependencies
     TestBed.configureTestingModule({
       declarations: [
-        PostsComponent,
+        PostsComponent, 
+        PostComponent
       ],
       providers: [
         {
@@ -77,7 +80,36 @@ describe('PostsComponent', () => {
     component = fixture.componentInstance;
   });
 
+  it('should check whether exact post is sending to PostComponent', () => {
+    mockPostService.getPosts.and.returnValue(of(POSTS));
+    fixture.detectChanges();
+    // we get the instance of all the child components
+    const postComponentDEs = fixture.debugElement.queryAll(
+      By.directive(PostComponent)
+    );
+
+    for (let i = 0; i < postComponentDEs.length; i++) {
+      let postComponentInstance = postComponentDEs[i]
+        .componentInstance as PostComponent;
+      expect(postComponentInstance.post.title).toEqual(POSTS[i].title);
+    }
+  });
+
+  // achieved using directive
+  it('should create exact same number of Post Component with Posts', () => {
+    mockPostService.getPosts.and.returnValue(of(POSTS));
+    //ngOnInit() is called for parent and for all child components present init.
+    fixture.detectChanges();
+    // <app-child></app-child> - it is treated as a directive only
+    const postComponentDEs = fixture.debugElement.queryAll(
+      By.directive(PostComponent)
+    );
+
+    expect(postComponentDEs.length).toEqual(POSTS.length);
+  });
+
   
+  // achieved using css
   it('should create one post child Element for each post ', () => {
     mockPostService.getPosts.and.returnValue(of(POSTS));
     fixture.detectChanges();
@@ -120,3 +152,4 @@ describe('PostsComponent', () => {
     });
   });
 });
+
