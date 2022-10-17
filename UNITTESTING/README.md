@@ -7,8 +7,15 @@ SpyObject
 # AAA Rule
 Arrange -> Act -> Assert
 
-# Wrtiting unit test for HTTP calls
+# Event emitters testing
+
+# Writing unit test for HTTP calls
 Refer Posts Component Spec file
+
+# TestBed utilization
+- Fixture
+- nativeElement - use when you are sure that DOM is present all time
+- DebugElement - for SSR we can utilize its method
 
 # Reference Link
 https://testing-angular.com/testing-services/

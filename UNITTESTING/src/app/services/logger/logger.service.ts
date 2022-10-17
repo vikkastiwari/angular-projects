@@ -6,8 +6,6 @@ import { Injectable } from '@angular/core';
 export class LoggerService {
   
   messages:string[] = [
-    'Dummy log 1',
-    'Dummy log 2',
   ];
 
   constructor() { 

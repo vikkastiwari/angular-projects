@@ -25,9 +25,9 @@ describe('LoggerService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should have some messages in start', () => {
+  it('should not have any messages in start', () => {
     // assert
-    expect(count).not.toBe(0);
+    expect(count).toBe(0);
   });
 
   it('should clear the testing logs if clear is called',() => {
@@ -39,6 +39,6 @@ describe('LoggerService', () => {
     service.clear();
 
     // assert 
-    expect(count).toBe(2);
+    expect(count).toBe(0);
   });
 });
