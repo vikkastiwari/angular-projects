@@ -11,7 +11,7 @@ export class CalculatorService {
 
   add(n1:number, n2:number){
     let result = n1 + n2;
-    this.loggerService.log('number added')
+    this.loggerService.log('number added');
     return result;
   }
 

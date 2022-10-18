@@ -14,7 +14,11 @@ describe('LoggerService', () => {
   */
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      providers:[
+        LoggerService
+      ]
+    });
     // arrange
     service = TestBed.inject(LoggerService);
     // act
@@ -32,7 +36,7 @@ describe('LoggerService', () => {
 
   it('should clear the testing logs if clear is called',() => {
     // act 
-    let service = new LoggerService;
+    // let service = new LoggerService;
     service.log('testing log 1');
     service.log('testing log 2');
 
