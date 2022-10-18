@@ -10,7 +10,14 @@ export class PostsService {
   constructor(private http:HttpClient) { }
 
   getPosts(){
+    console.log('getPosts hitted');
     return this.http.get<Post[]>(`https://jsonplaceholder.typicode.com/posts`);
+  }
+
+  getPost(postId: number) {
+    return this.http.get<Post>(
+      `https://jsonplaceholder.typicode.com/posts/${postId}`
+    );
   }
 
   deletePost(post:Post){

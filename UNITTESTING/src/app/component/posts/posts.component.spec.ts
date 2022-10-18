@@ -133,21 +133,56 @@ describe('PostsComponent', () => {
     beforeEach(()=>{
       mockPostService.deletePost.and.returnValue(of(true));
       component.posts = POSTS;
-      component.delete(POSTS[1]);
     });
 
     it('should delete the selected post from posts', () => {
+      component.delete(POSTS[1]);
       expect(component.posts.length).toBe(2);
     });
 
     it('should call delete from service only once', () => {
+      component.delete(POSTS[1]);
       // spyOn(mockPostService, 'deletePost').and.callThrough();
       expect(mockPostService.deletePost).toHaveBeenCalledTimes(1);
     });
 
     it('should delete selected post from list of posts', () => {
+      component.delete(POSTS[1]);
       for(let post of component.posts){
         expect(post).not.toBe(POSTS[1]);
+      }
+    });
+
+    it('should call delete method when post component button is clicked', () => {
+      spyOn(component, 'delete');
+      mockPostService.getPosts.and.returnValue(of(POSTS));
+      fixture.detectChanges();
+
+      // we are storing all the instances of postComponent
+      let postComponentDEs = fixture.debugElement.queryAll(
+        By.directive(PostComponent)
+      );
+      
+      for (let i = 0; i < postComponentDEs.length; i++) {
+        postComponentDEs[i]
+          .query(By.css('button'))
+          .triggerEventHandler('click', { stopPropagation: () => {} });
+        expect(component.delete).toHaveBeenCalledWith(POSTS[i]);
+      }
+    });
+    
+    it('should call the delete method when the delete event is emitted in Post Component', () => {
+      spyOn(component, 'delete');
+      mockPostService.getPosts.and.returnValue(of(POSTS));
+      fixture.detectChanges();
+
+      let postComponentDEs = fixture.debugElement.queryAll(
+        By.directive(PostComponent)
+      );
+
+      for (let i = 0; i < postComponentDEs.length; i++) {
+        (postComponentDEs[i].componentInstance as PostComponent).delete.emit();
+        expect(component.delete).toHaveBeenCalledWith(POSTS[i]);
       }
     });
   });

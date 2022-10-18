@@ -21,6 +21,7 @@ export class PostComponent implements OnInit {
     // The stopPropagation() method allows you to prevent propagation of the current event.
     // It prevents propagation of current event to its parent, it stays there
     event.stopPropagation(); 
+    // event.preventDefault(); 
     this.delete.emit();
   }
 }
