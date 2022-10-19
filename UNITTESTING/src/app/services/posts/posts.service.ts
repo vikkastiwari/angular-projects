@@ -6,7 +6,6 @@ import { Post } from 'src/app/models/Posts';
   providedIn: 'root'
 })
 export class PostsService {
-
   constructor(private http:HttpClient) { }
 
   getPosts(){
@@ -17,6 +16,13 @@ export class PostsService {
   getPost(postId: number) {
     return this.http.get<Post>(
       `https://jsonplaceholder.typicode.com/posts/${postId}`
+    );
+  };
+
+  updatePost(post: Post) {
+    return this.http.put(
+      `https://jsonplaceholder.typicode.com/post/${post.id}`,
+      post
     );
   }
 
