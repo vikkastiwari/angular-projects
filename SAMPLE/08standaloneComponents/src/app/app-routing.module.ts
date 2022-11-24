@@ -4,7 +4,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { WelcomeComponent } from './welcome/welcome.component';
 
 const routes: Routes = [
-  {path:'', component:WelcomeComponent},
+  {
+    path:'', 
+    component:WelcomeComponent,
+    loadComponent:() => import('./welcome/welcome.component').then(m => m.WelcomeComponent)},
   {
     path:'about',
     component:AboutComponent,
