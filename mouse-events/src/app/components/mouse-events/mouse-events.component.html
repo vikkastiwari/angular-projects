@@ -1,0 +1,76 @@
+<div class="header">
+    <h1>Mouse Events - Angular</h1>
+    <h3>Powered by PROGRAMMER'S MODE</h3>
+</div>
+<div class="row-container">
+    <div class="box cyan cursor-pointer" (click)="counter('click')">
+        <h2>Click</h2>
+        <p>Monitors click event</p>
+        <p>Counter - {{clickCounter}}</p>
+        <img src="../../../assets/images/tap.png" alt="click-icon">
+    </div>
+
+    <div class="box red cursor-pointer" (dblclick)="counter('dblclick')">
+        <h2>Double click</h2>
+        <p>Monitors double click event </p> 
+        <p>Counter - {{dblCounter}}</p>
+        <img src="../../../assets/images/mouse-clicker.png" alt="dbl-click-icon">
+    </div>
+
+    <div class="box blue" (mouseover)="counter('mouseover')">
+        <h2>Mouseover</h2>
+        <p>Monitors mouseover event</p>
+        <p>Counter - {{mouseoverCounter}}</p>
+        <img src="../../../assets/images/palm-of-hand.png" alt="">
+    </div>
+</div>
+<div class="row-container">
+    <div class="box blue" (mouseenter)="counter('mouseenter')">
+        <h2>Mouseenter</h2>
+        <p>Monitors mouseenter event</p>
+        <p>Counter - {{mouseenterCounter}}</p>
+        <img src="../../../assets/images/mouse.png" alt="">
+    </div>
+
+    <div class="box orange" (mouseleave)="counter('mouseleave')">
+        <h2>Mouseleave</h2>
+        <p>Monitors mouseleave event</p>
+        <p>Counter - {{mouseleaveCounter}}</p>
+        <img src="../../../assets/images/sports-and-competition.png" alt="">
+    </div>
+
+    <div class="box cyan" (mousedown)="counter('mousedown')">
+        <h2>Mousedown</h2>
+        <p>Monitors mousedown event</p>
+        <p>Counter - {{mousedownCounter}}</p>
+        <img src="../../../assets/images/scroll.png" alt="">
+    </div>
+</div>
+<div class="row-container">
+    <div class="box blue" (mouseup)="counter('mouseup')">
+        <h2>Mouseup</h2>
+        <p>Monitors mouseup event</p>
+        <p>Counter - {{mouseupCounter}}</p>
+        <img src="../../../assets/images/mouse-cursor.png" alt="">
+    </div>
+
+    <div class="box orange" (dragover)="counter('dragover')">
+        <h2>Select and Drag</h2>
+        <p>Monitors dragover event</p>
+        <p>Counter - {{dragoverCounter}}</p>
+        <img src="../../../assets/images/touch.png" alt="">
+    </div>
+
+    <div class="box cyan" (drag)="counter('drag')">
+        <h2>Drag and Drop</h2>
+        <p>Monitors drag event</p>
+        <p>Counter - {{dragCounter}}</p>
+        <img src="../../../assets/images/drag.png" alt="">
+    </div>
+</div>
+<footer>
+    <p class="attribution">
+        By <a href="https://www.youtube.com/channel/UCI_xIqMJa1Oirfjx5-ykylA" target="_blank">Programmers Mode</a>.
+        Coded by <a href="https://iamvikkastiwari.web.app/" target="_blank">Vikas Tiwari</a>.
+    </p>
+</footer>
