@@ -47,21 +47,21 @@
     </div>
 </div>
 <div class="row-container">
-    <div class="box blue" (mouseup)="counter('mouseup')">
+    <div class="box red" (mouseup)="counter('mouseup')">
         <h2>Mouseup</h2>
         <p>Monitors mouseup event</p>
         <p>Counter - {{mouseupCounter}}</p>
         <img src="../../../assets/images/mouse-cursor.png" alt="">
     </div>
 
-    <div class="box orange" (dragover)="counter('dragover')">
+    <div class="box blue" (dragover)="counter('dragover')">
         <h2>Select and Drag</h2>
         <p>Monitors dragover event</p>
         <p>Counter - {{dragoverCounter}}</p>
         <img src="../../../assets/images/touch.png" alt="">
     </div>
 
-    <div class="box cyan" (drag)="counter('drag')">
+    <div class="box orange" (drag)="counter('drag')">
         <h2>Drag and Drop</h2>
         <p>Monitors drag event</p>
         <p>Counter - {{dragCounter}}</p>
