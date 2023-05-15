@@ -1,6 +1,6 @@
 import { ActionReducerMap } from '@ngrx/store';
 
-import { ShoppingListState,  ShoppingListReducer } from './shopping-list.reducer';
+import { AppState, ShoppingListState} from './shopping-list.reducer';
 
 export interface AppState {
     shoppingList: ShoppingListState;
