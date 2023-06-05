@@ -1,0 +1,13 @@
+<table>
+    <thead>
+      <tr>
+        <th>Drag Drop </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let todo of todos; let i = index" draggable="true" (dragstart)="onDragStart($event, i)" (drop)="onDrop($event, i)" (dragover)="onDragOver($event)">
+        <td>{{ todo.task }}</td>
+      </tr>
+    </tbody>
+  </table>
+  

@@ -1,0 +1,15 @@
+<nav class="navbar">
+    <div class="navbar-logo">
+      <a href="#">Logo</a>
+    </div>
+    <div class="navbar-links" [ngClass]="{ 'navbar-links-show': showMenu }">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+    </div>
+    <button class="navbar-toggle" (click)="toggleMenu()">
+      <span class="navbar-toggle-icon"></span>
+    </button>
+  </nav>
+  

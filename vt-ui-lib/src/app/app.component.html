@@ -1,0 +1,17 @@
+<vt-header></vt-header>
+<div class="container">
+    <div class="col-4">
+        <div class="side-nav">
+            <ul class="side-nav-tabs" *ngFor="let item of navTabs">
+                <li class="side-nav-tab">
+                    <a href="#">{{item.name}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-8">
+        <div class="container-padding">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

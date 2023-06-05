@@ -1,0 +1,12 @@
+<div class="drawer-container" [class.open]="showDrawer">
+    <div class="drawer-header">
+      <h2 class="drawer-title">{{ drawerTitle }}</h2>
+      <button class="close-button" (click)="closeDrawer()">Close</button>
+    </div>
+    <div class="drawer-body">
+      <p class="drawer-description">{{ drawerDescription }}</p>
+    </div>
+  </div>
+  
+  <button class="open-drawer-button" (click)="openDrawer()">Open Drawer</button>
+  

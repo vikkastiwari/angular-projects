@@ -1,0 +1,6 @@
+<ul>
+    <li *ngFor="let location of locations" (mouseenter)="highlightMarker(location)" (click)="selectLocation(location)">
+      {{ location.name }}
+    </li>
+  </ul>
+  

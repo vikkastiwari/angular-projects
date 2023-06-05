@@ -1,0 +1,9 @@
+<div class="container">
+    <div class="left-panel">
+      <app-left-panel (locationSelected)="highlightLocation($event)"></app-left-panel>
+    </div>
+    <div class="right-panel">
+      <app-right-panel (markerClicked)="highlightMarker($event)"></app-right-panel>
+    </div>
+  </div>
+  

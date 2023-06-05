@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+.container {
+    display: flex;
+  }
+  
+  .left-panel {
+    flex: 1;
+    padding: 10px;
+    border-right: 1px solid #ccc;
+    overflow-y: auto;
+  }
+  
+  .right-panel {
+    flex: 2;
+    padding: 10px;
+  }
+  
+  .map-container {
+    height: 400px;
+  }
+  
